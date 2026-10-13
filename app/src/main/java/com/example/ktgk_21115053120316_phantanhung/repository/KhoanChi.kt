@@ -9,4 +9,12 @@ data class KhoanChi(
     var soTien: Double,
     var ghiChu: String,
     var daThanhToan: Boolean
-) : Serializable
+) : Serializable {
+
+    fun layThongTin(): String {
+        val trangThai_316 = if (daThanhToan) "Đã thanh toán" else "Chưa thanh toán"
+        return "[$maKhoanChi] $tenKhoanChi - ${soTien.toLong()} VNĐ - $trangThai_316 (Ghi chú: $ghiChu)"
+    }
+
+    fun laSoTienHopLe(): Boolean = soTien > 0
+}
