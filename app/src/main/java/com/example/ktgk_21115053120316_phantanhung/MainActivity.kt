@@ -7,7 +7,9 @@ import com.example.ktgk_21115053120316_phantanhung.databinding.ActivityMainBindi
 import com.example.ktgk_21115053120316_phantanhung.utils.hienThongBao_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraSoTien_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraTen_316
-
+import  com.example.ktgk_21115053120316_phantanhung.utils.KEY_GHI_CHU_316
+import  com.example.ktgk_21115053120316_phantanhung.utils.KEY_SO_TIEN_316
+import  com.example.ktgk_21115053120316_phantanhung.utils.KEY_TEN_316
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -21,7 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnThemKhoanChi316.setOnClickListener { xuLyThem_316() }
         binding.btnXemChiTiet316.setOnClickListener {
-            startActivity(Intent(this, ChiTietChiTieuActivity::class.java))
+            val intent_316 = Intent(this, ChiTietChiTieuActivity::class.java).apply {
+                putExtra(KEY_TEN_316, binding.edtTenKhoanChi316.text.toString().trim())
+                putExtra(KEY_SO_TIEN_316, binding.edtSoTien316.text.toString().trim())
+                putExtra(KEY_GHI_CHU_316, binding.edtGhiChu316.text.toString().trim())
+            }
+            startActivity(intent_316)
         }
     }
 
