@@ -30,6 +30,7 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
         binding.edtTenKhoanChi316.setText(khoanChiCu_316.tenKhoanChi)
         binding.edtSoTien316.setText(khoanChiCu_316.soTien.toLong().toString())
         binding.edtGhiChu316.setText(khoanChiCu_316.ghiChu)
+        binding.swDaThanhToan316.isChecked = khoanChiCu_316.daThanhToan
 
         binding.btnLuu316.setOnClickListener {
             val tenNhap_316 = binding.edtTenKhoanChi316.text.toString()
@@ -45,7 +46,8 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
             val khoanChiMoi_316 = khoanChiCu_316.copy(
                 tenKhoanChi = tenNhap_316.trim(),
                 soTien = soTienNhap_316.trim().toDouble(),
-                ghiChu = binding.edtGhiChu316.text.toString().trim()
+                ghiChu = binding.edtGhiChu316.text.toString().trim(),
+                daThanhToan = binding.swDaThanhToan316.isChecked
             )
             val ketQua_316 = Intent().apply { putExtra(KEY_KHOAN_CHI_316, khoanChiMoi_316) }
             setResult(Activity.RESULT_OK, ketQua_316)
