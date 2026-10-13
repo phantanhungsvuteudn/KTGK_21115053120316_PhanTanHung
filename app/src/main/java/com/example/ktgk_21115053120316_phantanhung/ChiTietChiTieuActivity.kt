@@ -22,6 +22,7 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChiTietChiTieuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnQuayLai316.setOnClickListener { finish() }
 
         ten_316 = intent.getStringExtra(KEY_TEN_316).orEmpty()
         soTien_316 = intent.getStringExtra(KEY_SO_TIEN_316).orEmpty()
@@ -33,6 +34,7 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         if (!kiemTraSoTien_316(soTien_316)) {
             hienThongBao_316("Số tiền không hợp lệ")
         }
+
     }
 
     private fun hienThi_316() {
