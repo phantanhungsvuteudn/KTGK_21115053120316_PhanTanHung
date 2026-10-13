@@ -1,5 +1,4 @@
 package com.example.ktgk_21115053120316_phantanhung
-package com.hung.ktgk
 
 import android.content.Intent
 import android.os.Bundle
@@ -17,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setContentView(binding.root)
+        title = "Phan Tấn Hùng - 21115053120316 - Quản lý chi tiêu cá nhân"
 
         binding.btnThemKhoanChi316.setOnClickListener { xuLyThem_316() }
         binding.btnXemChiTiet316.setOnClickListener {
