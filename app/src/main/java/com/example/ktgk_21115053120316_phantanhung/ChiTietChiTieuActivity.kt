@@ -11,6 +11,8 @@ import com.example.ktgk_21115053120316_phantanhung.utils.hienThongBao_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraSoTien_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraTen_316
 import android.content.Intent
+import android.app.Activity
+import androidx.activity.result.contract.ActivityResultContracts
 
 class ChiTietChiTieuActivity : AppCompatActivity() {
 
@@ -18,7 +20,18 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
     private var ten_316 = ""
     private var soTien_316 = ""
     private var ghiChu_316 = ""
-
+    private val chinhSuaLauncher_316 = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { ketQua_316 ->
+        if (ketQua_316.resultCode == Activity.RESULT_OK) {
+            ketQua_316.data?.let { duLieu_316 ->
+                ten_316 = duLieu_316.getStringExtra(KEY_TEN_316).orEmpty()
+                soTien_316 = duLieu_316.getStringExtra(KEY_SO_TIEN_316).orEmpty()
+                ghiChu_316 = duLieu_316.getStringExtra(KEY_GHI_CHU_316).orEmpty()
+                hienThi_316()
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChiTietChiTieuBinding.inflate(layoutInflater)
@@ -50,6 +63,6 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
             putExtra(KEY_SO_TIEN_316, soTien_316)
             putExtra(KEY_GHI_CHU_316, ghiChu_316)
         }
-        startActivity(intent_316)
+        chinhSuaLauncher_316.launch(intent_316)
     }
 }
