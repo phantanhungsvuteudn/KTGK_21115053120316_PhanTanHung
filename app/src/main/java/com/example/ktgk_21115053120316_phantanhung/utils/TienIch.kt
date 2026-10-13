@@ -2,6 +2,9 @@ package com.example.ktgk_21115053120316_phantanhung.utils
 
 import android.content.Context
 import android.widget.Toast
+const val KEY_TEN_316 = "TEN_KHOAN_CHI"
+const val KEY_SO_TIEN_316 = "SO_TIEN"
+const val KEY_GHI_CHU_316 = "GHI_CHU"
 
 fun kiemTraTen_316(ten_316: String): Boolean = ten_316.isNotBlank()
 
