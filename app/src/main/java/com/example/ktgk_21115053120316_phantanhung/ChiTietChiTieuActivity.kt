@@ -7,6 +7,9 @@ import com.example.ktgk_21115053120316_phantanhung.databinding.ActivityChiTietCh
 import com.example.ktgk_21115053120316_phantanhung.utils.KEY_GHI_CHU_316
 import com.example.ktgk_21115053120316_phantanhung.utils.KEY_SO_TIEN_316
 import com.example.ktgk_21115053120316_phantanhung.utils.KEY_TEN_316
+import com.example.ktgk_21115053120316_phantanhung.utils.hienThongBao_316
+import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraSoTien_316
+import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraTen_316
 
 class ChiTietChiTieuActivity : AppCompatActivity() {
 
@@ -24,6 +27,12 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         soTien_316 = intent.getStringExtra(KEY_SO_TIEN_316).orEmpty()
         ghiChu_316 = intent.getStringExtra(KEY_GHI_CHU_316).orEmpty()
         hienThi_316()
+        if (!kiemTraTen_316(ten_316)) {
+            hienThongBao_316("Không nhận được tên khoản chi")
+        }
+        if (!kiemTraSoTien_316(soTien_316)) {
+            hienThongBao_316("Số tiền không hợp lệ")
+        }
     }
 
     private fun hienThi_316() {
