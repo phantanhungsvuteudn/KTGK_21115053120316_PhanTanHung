@@ -10,6 +10,7 @@ import com.example.ktgk_21115053120316_phantanhung.utils.KEY_TEN_316
 import com.example.ktgk_21115053120316_phantanhung.utils.hienThongBao_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraSoTien_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraTen_316
+import android.content.Intent
 
 class ChiTietChiTieuActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         binding = ActivityChiTietChiTieuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnQuayLai316.setOnClickListener { finish() }
+        binding.btnChinhSua316.setOnClickListener { moManHinhChinhSua_316() }
 
         ten_316 = intent.getStringExtra(KEY_TEN_316).orEmpty()
         soTien_316 = intent.getStringExtra(KEY_SO_TIEN_316).orEmpty()
@@ -41,5 +43,13 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         binding.tvTenKhoanChi316.text = "Tên khoản chi: $ten_316"
         binding.tvSoTien316.text = "Số tiền: $soTien_316"
         binding.tvGhiChu316.text = "Ghi chú: $ghiChu_316"
+    }
+    private fun moManHinhChinhSua_316() {
+        val intent_316 = Intent(this, ChinhSuaChiTieuActivity::class.java).apply {
+            putExtra(KEY_TEN_316, ten_316)
+            putExtra(KEY_SO_TIEN_316, soTien_316)
+            putExtra(KEY_GHI_CHU_316, ghiChu_316)
+        }
+        startActivity(intent_316)
     }
 }
