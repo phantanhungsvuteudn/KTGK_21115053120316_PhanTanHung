@@ -59,6 +59,9 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         binding.tvTenKhoanChi316.text = "Tên khoản chi: ${khoanChi_316.tenKhoanChi}"
         binding.tvSoTien316.text = "Số tiền: ${khoanChi_316.soTien.toLong()} VNĐ"
         binding.tvGhiChu316.text = "Ghi chú: ${khoanChi_316.ghiChu}"
+        binding.tvTrangThai316.text =
+            if (khoanChi_316.daThanhToan) "Trạng thái: Đã thanh toán"
+            else "Trạng thái: Chưa thanh toán"
     }
 
     private fun moManHinhChinhSua_316() {

@@ -26,3 +26,5 @@ fun Intent.layKhoanChi_316(key_316: String): KhoanChi? =
         @Suppress("DEPRECATION")
         getSerializableExtra(key_316) as? KhoanChi
     }
+fun dinhDangTien_316(soTien_316: Double): String =
+    if (soTien_316 % 1.0 == 0.0) soTien_316.toLong().toString() else soTien_316.toString()
