@@ -62,6 +62,7 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         binding.tvTrangThai316.text =
             if (khoanChi_316.daThanhToan) "Trạng thái: Đã thanh toán"
             else "Trạng thái: Chưa thanh toán"
+        binding.tvLoaiChi316.text = "Loại chi: ${khoanChi_316.loaiChi}"
     }
 
     private fun moManHinhChinhSua_316() {

@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Du lieu khoi tao rieng cua sinh vien (hay doi thanh noi dung cua ban)
+
     private fun napDuLieuMau_316() {
         binding.edtTenKhoanChi316.setText("Mua tai nghe Bluetooth Soundcore")
         binding.edtSoTien316.setText("459000")
