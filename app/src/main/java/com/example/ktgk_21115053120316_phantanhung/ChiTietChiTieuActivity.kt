@@ -29,7 +29,10 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
                 soTien_316 = duLieu_316.getStringExtra(KEY_SO_TIEN_316).orEmpty()
                 ghiChu_316 = duLieu_316.getStringExtra(KEY_GHI_CHU_316).orEmpty()
                 hienThi_316()
+                hienThongBao_316("Đã lưu chỉnh sửa")
             }
+        } else {
+            hienThongBao_316("Đã hủy chỉnh sửa, dữ liệu giữ nguyên")
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
