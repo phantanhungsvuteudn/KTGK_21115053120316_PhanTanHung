@@ -9,16 +9,23 @@ import com.example.ktgk_21115053120316_phantanhung.utils.KEY_KHOAN_CHI_316
 import com.example.ktgk_21115053120316_phantanhung.utils.hienThongBao_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraSoTien_316
 import com.example.ktgk_21115053120316_phantanhung.utils.kiemTraTen_316
+import android.widget.ArrayAdapter
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var demMa_316 = 0
+    private val dsLoaiChi_316 = listOf("Ăn uống", "Đi lại", "Học tập", "Khác")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.spLoaiChi316.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            dsLoaiChi_316
+        )
         title = "Phan Tấn Hùng - 21115053120316 - Quản lý chi tiêu cá nhân"
 
         napDuLieuMau_316()
@@ -46,7 +53,8 @@ class MainActivity : AppCompatActivity() {
             tenKhoanChi = binding.edtTenKhoanChi316.text.toString().trim(),
             soTien = binding.edtSoTien316.text.toString().trim().toDoubleOrNull() ?: 0.0,
             ghiChu = binding.edtGhiChu316.text.toString().trim(),
-            daThanhToan = false
+            daThanhToan = false,
+            loaiChi = binding.spLoaiChi316.selectedItem.toString()
         )
     }
 
